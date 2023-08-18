@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>To Do List</title>
+
+    <style>
+        body {
+            background-image: linear-gradient(to right, #EDC1D3, #91BDEC);
+            font-family: myFirstFont;
+        }
+
+
+        .content {
+            background-color: white;
+            box-shadow: 0 0 10px #91BDEC;
+            width: 1100px;
+            min-height: 800px;
+            border-radius: 30px;
+            margin-left: 220px;
+            margin-top: 20px;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url(Montserrat-Light.ttf);
+        }
+
+        @font-face {
+            font-family: mySecondFont;
+            src: url(Poppins-Medium.ttf);
+        }
+
+        .todos{
+            display: flex;
+        }
+
+        .todo-list{
+            width: 60%;
+        }
+
+        .updates{
+            width: 40%;
+        }
+
+        .onhold {
+            margin-left: 20px;
+        }
+
+
+
+        .Completed {
+         margin-left: 20px;
+        }
+
+        input{
+            border: none; 
+            margin-left: 20px;
+             width: 290px; 
+             margin-top: 15px;
+            background-image: url(search-interface-symbol.png);
+            border-radius: 20px;
+
+            padding: 10px;
+            padding-left: 40px;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 10px;
+        }
+
+        h2{
+            margin-left: 20px; 
+            font-family: mySecondFont;
+
+        }
+
+        .addnew{
+            border-radius: 10px;
+             border: none;
+              color: white; 
+              background-color: #884CB2;
+               padding: 5px;
+        }
+
+        .on_hold{
+           margin-left: 5px;
+            margin-top: 30px;
+        }
+
+     
+
+        .img{
+            width: 40px;
+            height: 40px;
+            /* margin-left: 50px; */
+            margin-right: -10px;
+            /* border: 1px solid black; */
+            /* border-radius: 50%; */
+        }
+
+
+
+
+        .status{
+            border-radius: 5px;
+            width: fit-content;
+            padding: 4px;
+              font-size: medium;
+        }
+
+        .pending{
+        color:#F2994A;
+          background-color:#f8cca6;
+          
+            
+             
+        }
+        .inprogress1{
+            color:#56CCF2; 
+             background-color:#a3e1f6;
+        }
+
+
+
+
+
+        .completed{
+            margin-top: 30px;
+        }
+
+
+        .grey{
+            color: rgb(153, 151, 151);
+        }
+
+        .completedd{
+            color:green; 
+             background-color:rgb(208, 246, 208);
+             width: fit-content;
+            
+             
+        }
+
+       
+
+        .tasks{
+            color: #F3477A;
+        }
+
+
+
+        .cancelled{
+            color:red;
+              background-color:rgb(245, 181, 181);
+               width: fit-content;
+        }
+
+
+
+
+        .div{
+            justify-content: space-between;
+            display: flex;
+            position: relative;
+            width: 100%;
+        }
+
+
+        .div > * {
+            width: 25%;
+        }
+
+        .div > :first-child{
+            width: 50%;
+        }
+
+        .statuses{
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+           
+        }
+
+        .images{
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+    
+        
+
+        .Alena{
+            font-family: mySecondFont;
+        }
+
+        .planning{
+            font-family: myFirstFont;
+            font-size:small;
+            margin-left: 15px;
+        }
+
+
+        .women1{
+           
+            height: 100px;
+            height:100px;
+         }
+
+
+         .leo{
+            background-color: #DAE4F4;
+            border-radius: 10px;
+            font-size: medium;
+            padding: 10px;
+            margin-right: 10px;
+         }
+
+
+         .yourmessage{
+            color: #5787A4;
+         }
+
+
+         .system{
+            color: #5787A4;
+         }
+
+
+         .comment{
+            display: flex;
+            align-items: center;
+
+         }
+
+        .please{
+            font-size: small;
+            padding-bottom: 10px;
+        }
+
+
+        .planningfor{
+            font-size: small;
+        }
+
+
+        .pm14{
+            color: #F3477A;
+
+        }
+
+        .justnow{
+            color: #7D859A;
+            font-size: smaller;
+        }
+
+        .userflow{
+            color: #884CB2;
+            font-weight: bold;
+        }
+
+
+        .uidesign{
+            color: #F7BD40;
+            font-weight: bold;
+        }
+
+        .zip{
+            width: 180px;
+            height: 70px;
+            align-items: center;
+            padding-left: 40px;
+        }
+
+
+        .amazing{
+            background-color: #F3F3F3;
+            color: #555555;
+            font-size: smaller;
+            display: inline;
+           padding: 30px;
+       
+           
+            
+        }
+
+        .ui{
+            font-family: myFirstFont;
+            font-size:small;
+            margin-left: 15px;
+           
+
+        }
+
+
+       .man{
+        height: 100px;
+     
+       }
+
+       .theman{
+        display: flex;
+       }
+
+
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <input type="text" name="" id="" placeholder="Search for anything you want..">
+
+        <div class="header">
+        <h2> you've got <span class="tasks" >7 tasks</span> today <button class="addnew"> + Add new </button> </h2>
+        </div>
+
+        <div class="todos">
+            <div class="todo-list">
+
+                <div class="onhold" >
+                    <h2 class="on_hold"> on hold </h2>
+        
+                    <div class="div">
+                    <h3> . Evaluate the addition and deletion of user IDs.</h3>
+                     <div class="statuses">
+                        <span class="status pending">pending</span>
+                     </div>
+                        <span class="images"> <img src="pngwing.com (1).png" alt="" class="img"> <img
+                                src="pngwing.com (2).png" alt="" class="img"> <img
+                                src="wing.com (1).png" alt="" class="img"></span> 
+                    </div>
+        
+                    <div class="div">
+                    <h3> . Identify the implementation team.</h3> 
+                    <div class="statuses">
+                        <span class="status inprogress1">In progress</span> 
+                    </div>
+                    <span class="images"> <img src="pngwing.com (1).png" alt="" class="img"> <img src="pngwing.com (2).png" alt="" class="img"> </span>
+                    </div>
+        
+                    <div class="div">
+                    <h3> . Batch schedule download/process.</h3> 
+                     <div class="statuses">
+                        <span class="status pending">pending</span>
+                     </div>
+                        <span class="images"> <img src="pngwing.com (1).png" alt="" class="img"> </span>
+                    </div>
+        
+        
+        
+                    <div class="div">
+                    <h3> . Monitor system performance and adjust hardware. </h3> 
+                    <div class="statuses">
+                        <span class="status pending">pending</span>
+                    </div>
+                    <span></span>
+                   </div>
+        
+                </div>
+        
+        
+                <div class="Completed" >
+                    <h2 class=" completed"> Completed </h2>
+        
+                    <div class="div">
+                        <h3 class="grey"> . Install console machines and prerequisite software.</h3>
+                    <div class="statuses">
+                     <span class="status completedd" >completed</span>
+                    </div>
+                    <span></span>
+                </div>
+                    
+        
+                    <div class="div">
+                        <h3 class="grey"> . Design a relatively simple business system. </h3>
+                     <div class="statuses">
+                     <span class="status pending">pending</span>
+                    </div>
+                    <span></span>
+                </div>
+        
+                    <div class="div">
+                        <h3 class="grey"> . Define users and workflow.  </h3>
+                    <div class="statuses">
+                    <span class="status cancelled" >cancelled</span>
+                </div>
+                <span></span>
+                </div>
+        
+                </div>
+            </div>
+
+
+
+            <div class="updates">
+
+                <div class="div1">
+                <div class="women11">
+                <img src="women1.png" alt="" class="women1">
+                <div class="comment">
+                <h6 class="Alena">Alena Curtis</h6>
+                <p class="planning">Planning for new event at Sydney room for <br>new project on <span class="pm14">14:00 PM</span></p>
+                </div>
+            </div>
+        </div>
+
+
+                <div class="leo">
+                    <p class="yourmessage">Your message to Leo Dias has been sent. <span class="justnow">-just now</span></p>
+                    <p class="planningfor">Planning for new event at Sydney room for new project on coming week.</p>
+                </div>
+
+
+                <div class="systemmessage">
+                    <p class="system">System message <span class="justnow">-just now</span> ✔️</p>
+                    <p class="please">Please update your profile</p>
+                </div>
+
+            
+
+                 <div class="div2">
+                <div class="women2">
+                    <img src="women2.png" alt="" class="women1"> <img src="zip.jpg" alt="" class="zip">
+                    <div class="comment">
+                    <h6 class="Alena">Alena Curtis</h6> 
+                    <p class="planning">Attached new design file to <span class="userflow">Userflow</span></p>
+                    </div>
+                </div>
+            </div>
+
+
+                  <div class="div3">
+                    <div class="man1">
+                        <div class="theman">
+                        <img src="man.png" alt="" class="man"> 
+                        <p class="amazing">Amazing! Great work.Keep it up, bro❤️</p>
+                    </div>
+                        <div class="comment">
+                        <h6 class="Alena">Chance Madsen</h6>
+                        <p class="ui">Comment on your task <span class="uidesign">UI Design</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+         
+        
+
+    </div>
+</body>
+
+</html>
